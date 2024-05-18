@@ -6,10 +6,11 @@ The Recipe Management System is a Python Django-based web application designed t
 
 ## Installation
 
-git clone git@github.com:MarcTO2/Recipe-Management-System.git.
-cd Recipe-Management-System.
-pipenv shell to activate the virtualenv 
-python manage.py runsever to display the user interface of the app.
+git clone git@github.com:MarcTO2/Recipe-Management-System.git
+cd Recipe-Management-System
+pipenv shell
+python manage.py runserver
+
 
 
 ## Usage
