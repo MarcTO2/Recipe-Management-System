@@ -1,25 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>{% block title %}My Recipe Site{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Recipe Site{% endblock %}</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h1>My Recipe Site</h1>
-        <nav>
-            <a href="{% url 'recipes:recipe_list' %}">Home</a>
-            <a href="{% url 'recipes:recipe_create' %}">Add Recipe</a>
-        </nav>
+    <header class="bg-dark text-white p-3 mb-4">
+        <div class="container">
+            <h1 class="h3">Recipe App</h1>
+            <nav class="nav">
+                <a class="nav-link text-white" href="{% url 'recipes:recipe_list' %}">Home</a>
+                <a class="nav-link text-white" href="{% url 'recipes:recipe_create' %}">Add Recipe</a>
+            </nav>
+        </div>
     </header>
-    <main>
+
+    <main class="container">
         {% block content %}
         {% endblock %}
     </main>
-    <footer>
-        <p>&copy; 2024 My Recipe Site</p>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4 fixed-bottom">
+        <div class="container">
+            <p>&copy; 2024 My Recipe Site</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
