@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}My Recipe Site{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <h1>My Recipe Site</h1>
+        <nav>
+            <a href="{% url 'recipes:recipe_list' %}">Home</a>
+            <a href="{% url 'recipes:recipe_create' %}">Add Recipe</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 My Recipe Site</p>
+    </footer>
+</body>
+
+</html>

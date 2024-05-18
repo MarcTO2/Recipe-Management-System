@@ -6,7 +6,7 @@ from .forms import RecipeForm
 
 class RecipeListView(ListView):
     model = Recipe
-    template_name ='recipes/recipe_list.html'
+    template_name ='recipes/templates/recipe_list.html'
     context_object_name ='recipes'
 
     def get_queryset(self):
