@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Recipes</h1>
+    <form method="get">
+        <input type="text" name="q" placeholder="Search by title or ingredients" value="{{ request.GET.q }}">
+        <select name="difficulty">
+            <option value="">All Difficulties</option>
+            <option value="easy" {% if request.GET.difficulty == 'easy' %}selected{% endif %}>Easy</option>
+            <option value="medium" {% if request.GET.difficulty == 'medium' %}selected{% endif %}>Medium</option>
+            <option value="hard" {% if request.GET.difficulty == 'hard' %}selected{% endif %}>Hard</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for recipe in recipes %}
+        <li><a href="{% url'recipe-detail' recipe.id %}">{{ recipe.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'recipe-create' %}">Create a new recipe</a>
+{% endblock %}
