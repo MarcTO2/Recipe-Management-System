@@ -1,13 +1,23 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>{{ recipe.title }}</h1>
-    <p>{{ recipe.description }}</p>
-    <h3>Ingredients</h3>
-    <p>{{ recipe.ingredients }}</p>
-    <h3>Cooking Instructions</h3>
-    <p>{{ recipe.cooking_instructions }}</p>
-    <p>Difficulty: {{ recipe.get_difficulty_display }}</p>
-    <a href="{% url 'recipes:recipe_edit' recipe.id %}">Edit</a>
-    <a href="{% url 'recipes:recipe_delete' recipe.id %}">Delete</a>
-    {% endblock %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>{{ recipe.title }}</h1>
+            <p>{{ recipe.description }}</p>
+            <h3>Ingredients</h3>
+            <p>{{ recipe.ingredients }}</p>
+            <h3>Cooking Instructions</h3>
+            <p>{{ recipe.cooking_instructions }}</p>
+            <p>Difficulty: {{ recipe.get_difficulty_display }}</p>
+        </div>
+        <div class="col-md-4">
+            <div class="btn-group">
+                <a href="{% url 'recipes:recipe_edit' recipe.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'recipes:recipe_delete' recipe.id %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,11 +1,23 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Delete Recipe</h1>
-    <p>Are yous sure you want to delete "{{ object.title }}"?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Yes</button>
-        <a href="{% url 'recipes:recipe_detail' object.id %}">No</a>
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Delete Recipe</h1>
+                    <p class="card-text">Are you sure you want to delete "{{ object.title }}"?</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-danger">Yes</button>
+                            <a href="{% url 'recipes:recipe_detail' object.id %}" class="btn btn-secondary">No</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

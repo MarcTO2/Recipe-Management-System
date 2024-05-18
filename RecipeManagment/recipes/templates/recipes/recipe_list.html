@@ -1,21 +1,25 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Recipes</h1>
-    <form method="get">
-        <input type="text" name="q" placeholder="Search by title or ingredients" value="{{ request.GET.q }}">
-        <select name="difficulty">
+<div class="container mt-4">
+    <h1 class="mb-4">Recipes</h1>
+    <form method="get" class="mb-4">
+        <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search by title or ingredients" value="{{ request.GET.q }}">
+        <select name="difficulty" class="form-select">
             <option value="">All Difficulties</option>
             <option value="easy" {% if request.GET.difficulty == 'easy' %}selected{% endif %}>Easy</option>
             <option value="medium" {% if request.GET.difficulty == 'medium' %}selected{% endif %}>Medium</option>
             <option value="hard" {% if request.GET.difficulty == 'hard' %}selected{% endif %}>Hard</option>
         </select>
-        <button type="submit">Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
     </form>
-    <ul>
+    <ul class="list-group">
         {% for recipe in recipes %}
-        <li><a href="{% url 'recipes:recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
+        <li class="list-group-item"><a href="{% url 'recipes:recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'recipes:recipe_create' %}">Create a new recipe</a>
+    <a href="{% url 'recipes:recipe_create' %}" class="btn btn-success mt-4">Create a new recipe</a>
+</div>
 {% endblock %}

@@ -124,4 +124,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-HOME_URL = 'http://127.0.0.1:8000/recipes/'
+HOME_REDIRECT_URL = 'recipes'
