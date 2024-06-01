@@ -33,10 +33,10 @@ Select "Connect your repository" and choose the Recipe Management System reposit
 Click the "Create Web Service" button. Render will start building and deploying your application.
 
 ## Technologies used
-Python
-Django
-Html
-Bootstrap
+1.Python
+2.Django
+3.Html
+4.Bootstrap
 
 ## License
 
